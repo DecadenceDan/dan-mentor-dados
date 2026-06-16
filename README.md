@@ -20,7 +20,7 @@ Um assistente virtual inteligente desenvolvido com a API do Google Gemini e inte
 
 1. **Clone este repositório:**
 ```bash
-git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
+git clone https://github.com/DecadenceDan/dan-mentor-dados
 cd dan-assistant
 ```
 
