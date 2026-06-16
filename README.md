@@ -1,21 +1,48 @@
-# 🤖 Dan - Assistente Virtual de Dados & Analytics
+# 🤖 Dan - Mentor de Dados (AI Assistant)
 
-Este projeto foi desenvolvido como parte do desafio de Inteligência Artificial da [Digital Innovation One (DIO)](https://dio.me). O **Dan** é um assistente virtual focado em guiar profissionais e estudantes na jornada de análise de dados.
+Um assistente virtual inteligente desenvolvido com a API do Google Gemini e interface web em Streamlit. O Dan atua como um mentor educacional especializado em Métricas de BI, Otimização SQL e Python (Pandas vs Polars), utilizando técnicas avançadas de Engenharia de Prompt e injeção de contexto para fornecer respostas precisas.
 
-## 🎯 O Problema & A Solução
-A rotina na área de dados exige alternar constantemente entre regras de negócios, sintaxe SQL e códigos Python. O Dan centraliza esse conhecimento técnico em um chatbot rápido no terminal, garantindo respostas confiáveis baseadas estritamente em uma base de conhecimento fechada, mitigando riscos de alucinação da IA.
+## 🚀 Principais Funcionalidades
 
-## 🧠 Pilares de Conhecimento
-O assistente foi estruturado para responder dúvidas sobre três pilares essenciais:
-- 💰 **Métricas de BI:** Conceitos e fórmulas de Faturamento, CAC e Churn.
-- 🗄️ **Boas Práticas em SQL:** Otimização de queries, filtros eficientes com `WHERE` e uso de `JOINs`.
-- 🐍 **Manipulação de Dados:** Regras de performance e diferenças práticas entre as bibliotecas Pandas e Polars.
+* **Interface de Chat Interativa:** Construída com Streamlit, simulando uma experiência fluida de mensageria.
+* **Memória de Conversa (Session State):** Retenção de histórico de chat e gerenciamento de estado do servidor para evitar quedas de conexão com a API.
+* **Engenharia de Prompt & Árvores de Decisão:** O modelo de IA segue um prompt sistêmico estruturado para decidir quando usar o conhecimento injetado (*Cenário A*), quando usar seu conhecimento geral para tecnologia (*Cenário B*) e quando bloquear assuntos fora do escopo (*Cenário C*).
+* **Aterramento de IA (Grounding/RAG Básico):** O assistente consome documentos `.txt` locais para embasar suas respostas em diretrizes de negócios pré-aprovadas.
 
 ## 🛠️ Tecnologias Utilizadas
-- **Python** 🐍
-- **Ambiente Virtual (venv)** 📦
 
-## 🚀 Como Executar o Assistente
-1. Entre na pasta correta do projeto e ative o ambiente virtual:
-   ```powershell
-   .venv\Scripts\Activate.ps1
+* **Python 3**
+* **Streamlit** (Front-end e Web App)
+* **Google GenAI SDK** (Modelo `gemini-2.5-flash`)
+* **python-dotenv** (Gerenciamento seguro de credenciais)
+
+## ⚙️ Como executar o projeto localmente
+
+1. **Clone este repositório:**
+```bash
+git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
+cd dan-assistant
+```
+
+2. **Crie e ative um ambiente virtual:**
+```bash
+python -m venv .venv
+# No Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+```
+
+3. **Instale as bibliotecas necessárias:**
+```bash
+pip install streamlit google-genai python-dotenv
+```
+
+4. **Configure a Chave de API:**
+Crie um arquivo `.env` na raiz do projeto e insira a sua chave do Google Gemini:
+```env
+GEMINI_API_KEY="SUA_CHAVE_AQUI"
+```
+
+5. **Inicie a aplicação:**
+```bash
+streamlit run src/app.py
+```
