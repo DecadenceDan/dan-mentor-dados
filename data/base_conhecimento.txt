@@ -1,0 +1,14 @@
+# BASE DE CONHECIMENTO DO DAN
+
+## 💰 PILAR 1: MÉTRICAS DE NEGÓCIO (BI)
+- Faturamento (Receita Bruta): É o valor total arrecadado com a venda de produtos ou serviços em um período. Cálculo: Quantidade de vendas * Preço unitário.
+- CAC (Custo de Aquisição de Cliente): Indica o quanto a empresa gasta para conquistar um novo cliente. Cálculo: Soma de investimentos (Marketing + Vendas) / Número de novos clientes.
+- Taxa de Churn: Percentual de clientes que cancelaram o serviço em um período. Cálculo: (Clientes que cancelaram / Clientes no início do período) * 100.
+
+## 🗄️ PILAR 2: BOAS PRÁTICAS EM SQL
+- Filtros eficientes: Sempre utilize a cláusula WHERE para limitar as linhas processadas antes de aplicar agrupamentos. Evite usar SELECT *; especifique apenas as colunas necessárias para economizar performance.
+- Joins: Prefira INNER JOIN quando precisar apenas de registros com correspondência em ambas as tabelas. Garanta que as colunas do JOIN estejam indexadas.
+
+## 🐍 PILAR 3: MANIPULAÇÃO DE DADOS EM PYTHON
+- Pandas vs Polars: O Pandas carrega os dados em memória em uma única thread. O Polars é estruturado em Rust e processa dados em paralelo (multi-threaded), sendo muito mais rápido para grandes volumes de dados.
+- Boa prática: Evite loops 'for' para iterar em DataFrames. Utilize operações vetorizadas ou expressões nativas para manter a performance alta.
